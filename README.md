@@ -44,12 +44,12 @@ Lexique is distributed as an Excel file (.xlsb). In order to use it effectively 
 
 ## Use in other projects
 The Lexique SQLite file can be used with other languages/frameworks, e.g.:
-	- **Java**: 
-		- [OrmLite](http://ormlite.com) - an object-relational mapping library (preferred)
-		- [JDBC](https://docs.oracle.com/javase/tutorial/jdbc/basics) - a direct adapter
-	- **Ruby**:
-		- [Sequel](http://sequel.jeremyevans.net/index.html) - an object-relational mapping library (preferred)
-		- [Sqlite3](https://rubygems.org/gems/sqlite3) - a direct adapter
+* **Java**: 
+	- [ActiveJDBC](http://javalite.io/activejdbc) - an object-relational mapping library (preferred)
+	- [JDBC](https://docs.oracle.com/javase/tutorial/jdbc/basics) - a direct adapter
+* **Ruby**:
+	- [Sequel](http://sequel.jeremyevans.net/index.html) - an object-relational mapping library (preferred)
+	- [Sqlite3](https://rubygems.org/gems/sqlite3) - a direct adapter
 
 ## Modifying the database
 Depending on its use, the database may need to be modified, such as indexing fields that are often used (such as `ortho`). In order to do so, [Sqliteman](http://sqliteman.com) is a good tool to use.
