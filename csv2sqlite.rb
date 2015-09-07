@@ -42,9 +42,7 @@ def populateTableFromCSV(database, file, tablename)
   puts "Dropping and re-creating table: #{tablename}"
   DB.drop_table? tablename
   DB.create_table tablename do
-    # see http://sequel.rubyforge.org/rdoc/files/doc/schema_modification_rdoc.html
-    # primary_key :id
-    # Float :price
+    primary_key :id
 	puts "Processing column classes for table: #{tablename}"
     data.by_col!.each do |columnName, rows|
 	  puts "Getting common class for #{columnName}"
@@ -60,7 +58,7 @@ def populateTableFromCSV(database, file, tablename)
 	end
     database[tablename].insert(row.to_hash)
   end
-  puts "Dtaa import complete"
+  puts "Data import complete"
 end
 
 # 
