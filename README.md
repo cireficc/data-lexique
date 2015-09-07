@@ -32,6 +32,14 @@ Lexique is distributed as an Excel file (.xlsb). In order to use it effectively 
 	- For help with `csv2sqlite`, run:
 
   `ruby csv2sqlite.rb -h` or `ruby csv2sqlite.rb --help`
+4. **Optional**: transliterate the words
+	- For easier searching, we can transliterate the words in the database, which will remove accents from the words. However, we don't want to modify the accented entry directly, we want to create a new column to hold the transliterated version of the word. `transliterate.rb` will take data from `column_name`, transliterate it, and enter it into `to_column`. Here's how to run the script:
+
+    `ruby transliterate.rb Lexique380.db words ortho ortho_sa orthrenv orthrenv_sa`
+	- The above command will transliterate the word (in column `ortho` and put the result in `ortho_sa` [orthographe sans accents]). Columns can be added in pairs of two (e.g. with the additional arguments `orthrenv` and `orthrenv_sa` as shown above).
+	- For help with `transliterate`, run:
+
+  `ruby transliterate.rb -h` or `ruby transliterate.rb --help`
 4. Move the `Lexique_VERSION.db` file from the root directory to the `sqlite` directory
 
 ## Use in other projects
