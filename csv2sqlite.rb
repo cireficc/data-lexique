@@ -54,11 +54,11 @@ def populateTableFromCSV(database, file, tablename)
   data.by_row!.each_with_index do |row, i|
 	if (i % 1000 == 0)
 	  percent_complete = ((i.to_f / data.length) * 100).round(2)
-	  puts "#{percent_complete}% completed"
+	  print "\r#{"%.2f" % percent_complete}% completed"
 	end
     database[tablename].insert(row.to_hash)
   end
-  puts "Data import complete"
+  puts "\rData import complete"
 end
 
 # 
