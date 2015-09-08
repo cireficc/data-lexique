@@ -46,7 +46,7 @@ until ARGV.empty? do
   to_column = ARGV.shift.to_sym
   begin
 	puts "Adding column #{to_column} to table #{TABLENAME}"
-	DB.add_column TABLENAME, to_column, :string
+	DB.add_column TABLENAME, to_column, String
   rescue Sequel::DatabaseError
 	puts "Column (#{to_column}) already exists, continuing"
   end
